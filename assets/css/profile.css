@@ -1,0 +1,560 @@
+@charset "utf-8";
+
+:root {
+    --primary-white: #FCFCFB;
+    --primary-black: #242424;
+    --primary-pink: #F4D5DD;
+    --primary-green: #194656;
+    --primary-greenR: #00414B;
+    --primary-gray: #A4A4A4;
+    --primary-grayR: #D6D6D5;
+    --contentPadding: 4.2%;
+}
+
+.ls-n0 { letter-spacing: 0em; }
+.ls-n1 { letter-spacing: -0.01em; }
+.ls-n2 { letter-spacing: -0.02em; }
+.ls-n3 { letter-spacing: -0.03em; }
+.ls-n4 { letter-spacing: -0.04em; }
+.ls-n5 { letter-spacing: -0.05em; }
+.ls-p1 { letter-spacing: 0.01em; }
+.ls-p2 { letter-spacing: 0.02em; }
+.ls-p3 { letter-spacing: 0.03em; }
+.ls-p4 { letter-spacing: 0.04em; }
+.ls-p6 { letter-spacing: 0.06em; }
+.ls-p9 { letter-spacing: 0.09em; }
+.ls-p12 { letter-spacing: 0.12em; }
+
+@media screen and (min-width: 769px) {
+    :root {
+        --contentPadding: 5.5%;
+    }
+}
+
+/* ================================ 
+profileContent
+=================================*/
+.sub-header {
+    padding: 8.0rem var(--contentPadding) 0;
+}
+
+.sub-header__title {
+    font-size: 6.5rem;
+    letter-spacing: -0.04em;
+    color: var(--primary-black);
+}
+
+.profileContent {
+    padding: 0 var(--contentPadding) 0;
+}
+
+.profileContent__img {
+    margin-top: 7.0rem;
+}
+
+.profileContent__img img {
+    width: 34.3rem;
+    height: 22.1rem;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.profileContent__body {
+    margin-top: 4.5rem;
+}
+
+.profileContent__name {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+}
+
+.profileContent__name .en {
+    margin-left: 1.0rem;
+    font-size: 1.6rem;
+}
+
+.profileContent__text {
+    font-size: 1.4rem;
+    line-height: 2;
+    font-weight: 400;
+    margin-top: 3.4rem;
+}
+
+.pcBr {
+    display: none;
+}
+.spBr {
+    display: block;
+}
+
+.profileContent__thoughts {
+    margin-top: 1.4rem;
+}
+
+.profileContent__inner .sns {
+    margin-top: 4.7rem;
+    display: flex;
+    gap: 2.2rem;
+}
+
+.sns__link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: opacity 0.3s ease;
+}
+
+.sns__link span {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.profileContent::after {
+    content: "";
+    display: block;
+    margin: 10.0rem auto 0;
+    width: 100%;
+    border-bottom: 1px solid var(--primary-grayR);
+}
+
+/* --- タイトル演出（ここから） --- */
+.sub-header__title.js-wave-title {
+    overflow: hidden;
+    display: block; 
+    white-space: nowrap;
+}
+.js-wave-title span {
+    display: inline-block;
+    transform: translateY(115%);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js-wave-title > span[class*="ls-"] {
+    transform: none !important;
+}
+.js-wave-title.is-animated span {
+    transform: translateY(0) !important;
+}
+
+/* --- 写真と文章の出現 --- */
+
+.profileContent__img,
+.profileContent__inner {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 
+        opacity 1.0s ease-out, 
+        transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+}
+
+.profileContent__img.is-visible,
+.profileContent__inner.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* common pc */
+@media screen and (min-width: 769px) {
+    .sub-header {
+        padding: 16.0rem var(--contentPadding) 0;
+    }
+
+    .sub-header__title {
+        font-size: 20.2rem;
+    }
+
+    .profileContent {
+        position: relative;
+        padding: 18.5rem var(--contentPadding) 28.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10.8rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .profileContent__inner {
+        display: block;
+        text-align: left;
+    }
+
+    .profileContent__img {
+        margin-top: 0rem;
+    }
+
+    .profileContent__img img {
+        width: 56.2rem;
+        height: 41.8rem;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .profileContent__body {
+        margin-top: 0;
+    }
+
+    .profileContent__name {
+        font-size: 3.2rem;
+    }
+
+    .profileContent__name .en {
+        margin-left: 2.0rem;
+        font-size: 1.6rem;
+    }
+
+    .profileContent__text {
+        font-size: 1.6rem;
+        line-height: 1.7;
+        margin-top: 3.2rem;
+    }
+
+    .pcBr {
+        display: block;
+    }
+    .spBr {
+        display: none;
+    }
+
+    .profileContent__thoughts {
+        margin-top: 1.8rem;
+    }
+
+    .profileContent__inner .sns {
+        margin-top: 5.0rem;
+        display: flex;
+        gap: 3.8rem;
+    }
+
+    .sns__link img[src*="Instagram"] {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .sns__link img[src*="tiktok"] {
+        width: 1.6rem;
+        height: 1.8rem;
+    }
+
+    .sns__link span {
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+
+    .profileContent::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--contentPadding);
+        width: calc(100% - (var(--contentPadding) * 2));
+        height: 1.5px;
+    }
+}
+
+/* ================================ 
+profile-features
+=================================*/
+.profile-features {
+    padding: 10.0rem var(--contentPadding) 0;
+}
+.feature-item {
+    margin-top: 12rem;
+}
+.feature-item:first-of-type {
+    margin: 0;
+}
+.feature-item__label {
+    font-size: 1.8rem;
+}
+.feature-item__label .ja {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.0rem;
+    font-weight: 500;
+    color: var(--primary-gray, #A4A4A4);
+}
+.feature-item__title {
+    margin-top: 3.0rem;
+    font-size: 2.4rem;
+    letter-spacing: 0.07em;
+    color: var(--primary-green);
+}
+.feature-item__circle-img {
+    width: 34.3rem;
+    margin: 6.4rem auto 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: 
+        opacity 0.6s ease-out, 
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.feature-item__circle-img.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.feature-item__circle-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.circle .left {
+    width: 30.0rem;
+    z-index: 1;
+    object-position: center 111%;
+}
+.circle .right {
+    z-index: 2;
+    position: absolute;
+    clip-path: polygon(100% 0, 100% 100%, 5% 100%, 100% 0);
+    transform: scale(1.0);
+    object-position: 90% 37%;
+}
+.feature-item:nth-child(3) .feature-item__circle-img img {
+    object-position: center 33%;
+}
+.feature-item__text {
+    margin: 5.0rem auto 0;
+    max-width: 40rem;
+    font-size: 1.4rem;
+    line-height: 2.1;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+}
+.profile-features::after {
+    content: "";
+    display: block;
+    margin: 10.0rem auto 0;
+    width: 100%;
+    border-bottom: 1px solid var(--primary-grayR);
+}
+
+@media screen and (min-width: 769px) {
+    .profile-features {
+        padding: 20.0rem var(--contentPadding) 0;
+        position: relative;
+    }
+    .feature-item {
+        margin-top: 21.6rem;
+        display: grid;
+        grid-template-columns: 51.5rem 54.2rem;
+        grid-template-areas: 
+            "img header"
+            "img text";
+        column-gap: 10.8rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .feature-item__header {
+        grid-area: header;
+        text-align: left;
+    }
+    .feature-item__circle-img {
+        grid-area: img;
+        width: 51.5rem;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+    .feature-item__text {
+        grid-area: text;
+        text-align: left;
+        width: 54.2rem;
+        max-width: none;
+        font-size: 1.8rem;
+        margin-top: 2.2rem;
+        line-height: 2;
+        align-self: start;
+    }
+    .feature-item__label {
+        font-size: 2.8rem;
+    }
+    .feature-item__label .ja {
+        margin-top: 1.2rem;
+        font-size: 1.2rem;
+    }
+    .feature-item__title {
+        font-size: 3.2rem;
+        margin-top: 5.2rem;
+    }
+    .circle .left {
+        width: 44.1rem;
+    }
+    .profile-features::after {
+        margin: 20.0rem auto 0;
+    }
+}
+
+/* ================================ 
+profile-tiktok
+=================================*/
+.profile-tiktok {
+    padding: 10.0rem var(--contentPadding) 0;
+    overflow-x: clip;
+}
+
+.profile-tiktok__title {
+    font-size: 5.3rem;
+    letter-spacing: -0.05em;
+    color: var(--primary-green);
+}
+
+.profile-tiktok__sub {
+    font-size: 1.2rem;
+    letter-spacing: 0.07em;
+    font-weight: 500;
+    margin-top: 1.6rem;
+}
+
+.line2 {
+    display: block;
+    text-align: right;
+}
+
+/* TikTokタイトルの親要素：はみ出た分を隠す */
+.profile-tiktok__title.js-tiktok-title {
+    overflow: hidden;
+}
+
+/* 1行目：左からゆっくり */
+.js-tiktok-title .line1 {
+    display: block;
+    opacity: 0;
+    transform: translateX(-100px); /* 100px左から */
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 2行目：右からゆっくり */
+.js-tiktok-title .line2 {
+    display: block;
+    text-align: right; /* TOPページと同じく右寄せに */
+    opacity: 0;
+    transform: translateX(100px); /* 100px右から */
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0.5s; /* 少し遅れて追いかける */
+}
+
+/* アニメーション発動時 */
+.js-tiktok-title.is-visible .line1,
+.js-tiktok-title.is-visible .line2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+.video-container {
+    position: relative;
+    width: 30.1rem; 
+    margin: 5.4rem auto 0;
+}
+.video-wrap {
+    width: 100%;
+    position: relative;
+    z-index: 1
+}
+.video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.tiktok-link {
+    display: block;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent; /* タップ時の青い枠を消す */
+}
+
+/* --- 💡 新しく追加：イラストの位置 --- */
+.video-illust {
+    position: absolute;
+    /* 💡 画面右端から60px(6.0rem)はみ出す */
+    right: -9.6rem; 
+    /* 💡 ビデオの下端から55px(5.5rem)上に配置して被せる */
+    bottom: -12.4rem; 
+    width: 24.0rem; /* W240 */
+    transform: rotate(12deg);
+    z-index: -1;
+}
+.video-illust img {
+    width: 100%;
+    height: auto;
+}
+.video-caption {
+    position: absolute;
+    top: calc(100% + 1.3rem); 
+    left: 0;
+    font-size: 0.8rem;
+    color: var(--primary-gray);
+    font-weight: 500;
+    line-height: 1.4;
+    writing-mode: horizontal-tb; 
+    transform: none; 
+    white-space: normal;
+}
+
+@media screen and (min-width: 769px) {
+    .profile-tiktok {
+        padding: 20.0rem var(--contentPadding) 0;
+    }
+
+    .profile-tiktok__header {
+        flex-shrink: 0;
+        width: auto;
+    }
+
+    .profile-tiktok__title {
+        font-size: 15.0rem;
+        line-height: 0.9;
+        display: flex;
+        flex-direction: column;
+        color: var(--primary-green);
+    }
+    .profile-tiktok__title .line2 {
+        margin-top: 1.2rem;
+    }
+    .profile-tiktok__title br {
+        display: none;
+    }
+
+    .profile-tiktok__sub {
+        font-size: 2.0rem;
+        margin-top: 4.8rem;
+        text-align: right;
+    }
+    .video-container {
+        width: 38.8rem;
+        margin-top: 14.2rem;
+    }
+    .video-illust {
+        transform: rotate(10deg);
+        right: -36.7rem;
+        bottom: -0.8rem;
+        width: 39.2rem;
+        z-index: -1;
+    }
+    
+    .video-caption {
+        position: absolute;
+        left: -2.0rem;
+        top: auto;
+        bottom: 0;
+        left: -6.4rem;
+        font-size: 1.7rem;
+        line-height: 1.2;
+        writing-mode: vertical-rl;
+        transform: rotate(0deg);
+        white-space: nowrap;
+    }
+}
+.page-profile .footerContact {
+    margin-top: 34.4rem;
+}
+@media screen and (min-width: 769px) {
+    .page-profile .footerContact {
+        margin-top: 45.4rem;
+    }
+}

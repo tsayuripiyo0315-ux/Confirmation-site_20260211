@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="イラストレーターSHUのポートフォリオウェブサイト">
+    <meta name="robots" content="noindex,nofollow">
+    <!-- favicon apple-touch-icon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/images/android-chrome-256x256.png">
+
+    <title>SHU Portfolio Site</title>
+    <script>
+        if (sessionStorage.getItem('hasLoaded')) {
+            document.documentElement.classList.add('is-skip-loading');
+        }
+    </script>
+    <link rel="preload" href="assets/images/top/bg_noise.png" as="image">
+    <!-- web font -->
+    <link rel="stylesheet" href="https://use.typekit.net/npb6bho.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/destyle.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/top.css">
+</head>
+
+<body id="page-home">
+    <div id="js-loading" class="loading">
+        <div class="loading__content">
+            <div class="loading__runner-wrapper">
+                <img src="assets/images/loading.png" alt="Runner and Cat" class="loading-img">
+            </div>
+        </div>
+        <div class="loading__text">
+            <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
+            <span>&nbsp;</span><span>T</span><span>O</span><span>&nbsp;</span>
+            <span>M</span><span>Y</span><span>&nbsp;</span><span>W</span><span>O</span><span>R</span><span>L</span><span>D</span>
+        </div>
+    </div>
+    <div id="container" class="container">
+        <header class="header">
+            <div class="header__topic">
+                <h1 class="header__logo">
+                    <a href="index.html" class="header__logoLink">
+                        <img src="assets/images/top/mainIcon.svg" alt="logo">
+                    </a>
+                </h1>
+                <div class="header__menu">
+                    <div class="menuBtn">
+                        <img class="bubbleMenu" src="assets/images/top/speechBubble_sp.svg" alt="MENUボタン">
+                        <span class="menuBtn__text">MENU</span>
+                    </div>
+                    <img class="menuDog" src="assets/images/top/dog.png" alt="ブルドッグ">
+                </div>
+            </div>
+            <nav class="nav">
+                <div class="nav__header">
+                    <p class="header__logo">
+                        <a href="index.html" class="header__logoLink">
+                            <img src="assets/images/top/navIcon.svg" alt="logo">
+                        </a>
+                    </p>
+                    <div class="header__menu">
+                        <div class="menuBtn">
+                            <img class="bubbleClose" src="assets/images/top/speechBubble_sp.svg" alt="CLOSEボタン">
+                            <span class="menuBtn__text">CLOSE</span>
+                        </div>
+                        <img class="menuDog" src="assets/images/top/dog.png" alt="ブルドッグ">
+                    </div>
+                </div>
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--home"><a href="index.html">HOME</a></li>
+                    <li class="nav__item nav__item--works"><a href="works.html">WORKS</a></li>
+                    <li class="nav__item nav__item--profile"><a href="profile.html">PROFILE</a></li>
+                    <li class="nav__item nav__item--contact"><a href="https://form.run/@shuokada"
+                            target="_blank">CONTACT</a></li>
+                    <li class="nav__item nav__item--btn">
+                        <a href="https://form.run/@shuokada" class="nav__contactLink" target="_blank">
+                            <span class="pcheader-bubble">
+                                <img src="assets/images/top/speechBubble_pc.svg" alt="CONTACTボタンPC">
+                                <span class="flip-inner">
+                                    <span class="menuBtn__text default-text">CONTACT</span>
+                                    <span class="hover-content">
+                                        <span class="hover-text">JUMP TO LINK</span>
+                                        <img class="arrow-img" src="assets/images/top/jump_to_link.svg" alt="arrow">
+                                    </span>
+                                </span>
+                            </span>
+                            <img class="pcheader-dog" src="assets/images/top/dog.png" alt="大きなブルドッグ">
+                        </a>
+                    </li>
+                </ul>
+                <div class="sns">
+                    <a class="sns__link" href="https://www.instagram.com/da____shu/" target="_blank">
+                        <img src="assets/images/top/Instagram_white.svg" alt="インスタグラムアイコン">
+                        <span>Instagram</span>
+                    </a>
+                    <a class="sns__link" href="https://www.tiktok.com/@dashu0901/" target="_blank">
+                        <img src="assets/images/top/tiktok_white.svg" alt="TikTokのアイコン">
+                        <span>TikTok</span>
+                    </a>
+                </div>
+                <div class="nav__footer">
+                    <div class="nav__shade"></div>
+                    <img src="assets/images/top/navImg.png" alt="宇宙のイラスト">
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            <article class="article">
+                <header class="article__header">
+                    <h2 class="article__title">
+                        <span class="marquee-view">
+                            <span class="marquee-content">
+                                SHU&nbsp;<span class="ls-n3">P</span>O<span class="ls-n4">R</span><span class="ls-n0">T</span><span class="ls-n2">F</span><span class="ls-n3">O</span><span class="ls-p3">L</span>I<span class="ls-n2">O</span><span class="ls-n2">S</span><span class="ls-p1">I</span><span class="ls-n1">T</span>E
+                            </span>
+                            <span class="marquee-content">
+                                SHU&nbsp;<span class="ls-n3">P</span>O<span class="ls-n4">R</span><span class="ls-n0">T</span><span class="ls-n2">F</span><span class="ls-n3">O</span><span class="ls-p3">L</span>I<span class="ls-n2">O</span><span class="ls-n2">S</span><span class="ls-p1">I</span><span class="ls-n1">T</span>E
+                            </span>
+                        </span>
+                    </h2>
+                    <p class="article__subtitle"><span class="ls-p4">W</span><span class="ls-p12">E</span><span
+                            class="ls-p9">L</span>COME TO MY WORLD,<br class="spBr">A CHECKERED WORLD FULL OF CHARM.
+                    </p>
+                    <div class="fv__img">
+                        <picture>
+                            <source media="(min-width: 769px)" srcset="assets/images/top/bg.pc.png">
+                            <img src="assets/images/top/bg.sp.png" alt="メインビジュアルイラスト">
+                        </picture>
+                    </div>
+                </header>
+                <section class="section section--works">
+                    <div class="sectionTitle">
+                        <h3 class="topic js-wave-title">W<span class="ls-n2">O</span><span class="ls-n0">RK</span>S</h3>
+                        <p class="sectionTitle__sub">今まで描いた作品</p>
+                    </div>
+                    <ul class="worksList">
+                        <li class="worksList__item">
+                            <a class="worksLink" href="works.html">
+                                <div class="worksLink__imgWrap">
+                                    <img src="assets/images/top/top_work01.png" alt="私立図書館 祝日様">
+                                </div>
+                                <div class="worksLink__text">
+                                    <p class="worksLink__title">私立図書館 祝日様</p>
+                                    <p class="worksLink__title">RISING SUN ROCK FESTIVAL in EZO 2025</p>
+                                    <p class="worksLink__class">CLIENT WORK</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="worksList__item">
+                            <a class="worksLink" href="works.html">
+                                <div class="worksLink__imgWrap">
+                                    <img src="assets/images/top/top_work02.jpg" alt="Karin様 レト口映画ポスター風">
+                                </div>
+                                <div class="worksLink__text">
+                                    <p class="worksLink__title">Karin様 レト口映画ポスター風</p>
+                                    <p class="worksLink__class">ORDER</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="worksList__item">
+                            <a class="worksLink" href="works.html">
+                                <div class="worksLink__imgWrap">
+                                    <img src="assets/images/top/top_work03.jpg" alt="ゆな様">
+                                </div>
+                                <div class="worksLink__text">
+                                    <p class="worksLink__title">ゆな様</p>
+                                    <p class="worksLink__class">ORDER</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="worksList__item">
+                            <a class="worksLink" href="works.html">
+                                <div class="worksLink__imgWrap">
+                                    <img src="assets/images/top/top_work04.jpg" alt="Birthday">
+                                </div>
+                                <div class="worksLink__text">
+                                    <p class="worksLink__title">Birthday</p>
+                                    <p class="worksLink__class">ORIGINAL</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="worksList__item">
+                            <a class="worksLink" href="works.html">
+                                <div class="worksLink__imgWrap">
+                                    <img src="assets/images/top/top_work05.jpg" alt="キャトルミューティレーション">
+                                </div>
+                                <div class="worksLink__text">
+                                    <p class="worksLink__title">キャトルミューティレーション</p>
+                                    <p class="worksLink__class">ORIGINAL</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="worksList__item">
+                            <a class="worksLink" href="works.html">
+                                <div class="worksLink__imgWrap">
+                                    <img src="assets/images/top/top_work06.jpg" alt="プレゼントが消えた">
+                                </div>
+                                <div class="worksLink__text">
+                                    <p class="worksLink__title">プレゼントが消えた</p>
+                                    <p class="worksLink__class">ORIGINAL</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="sectionBtn">
+                        <a class="btn-round" href="works.html">
+                            <span class="btn-text">VIEW MORE</span>
+                        </a>
+                    </div>
+                </section>
+                <div class="name">
+                    <p class="name__text">HEY, <br class="spBr">M<span class="ls-n1">Y</span> <span
+                            class="ls-n2">N</span><span class="ls-n0">A</span>ME'S<span class="name__text--name">O<span
+                                class="ls-p1">K</span><span class="ls-n3">A</span>DA SH<span
+                                class="ls-n2">U</span>!</span>
+                    </p>
+                </div>
+                <section class="section section--profile">
+                    <div class="sectionTitle">
+                        <h3 class="topic"><span class="ls-n1">P</span>RO<span class="ls-p1">FI</span><span
+                                class="ls-n1">L</span>E</h3>
+                        <p class="sectionTitle__sub">SHUについて</p>
+                    </div>
+                    <div class="profileContent">
+                        <div class="profileContent__img">
+                            <img src="assets/images/top/profile.jpg" alt="プロフィール画像">
+                        </div>
+
+                        <div class="profileContent__inner">
+                            <div class="profileContent__body">
+                                <p class="profileContent__lead js-slow-wave">
+                                    あなたの「描いてほしい」を、<br>確かな一枚に仕上げます。
+                                </p>
+                                <p class="profileContent__text">
+                                    イラストレーターとして活動しているおかだ しゅうと申します。<br>
+                                    あなたの「描いてほしい」を丁寧にすくい取り、想いや空気感まで伝わる、確かな一枚に仕上げます。<br>
+                                    制作の背景や大切にしていることは、プロフィールページでご紹介しています。
+                                </p>
+                            </div>
+
+                            <div class="sns">
+                                <a class="sns__link sns__link--profile" href="https://www.instagram.com/da____shu/"
+                                    target="_blank">
+                                    <img src="assets/images/top/icon_Instagram_sp.svg" alt="インスタグラムアイコン">
+                                    <span>Instagram</span>
+                                </a>
+                                <a class="sns__link sns__link--profile" href="https://www.tiktok.com/@dashu0901/"
+                                    target="_blank">
+                                    <img src="assets/images/top/icon_tiktok.svg" alt="TikTokのアイコン">
+                                    <span>TikTok</span>
+                                </a>
+                            </div>
+
+                            <div class="sectionBtn">
+                                <a class="btn-round" href="profile.html">
+                                    <span class="btn-text">VIEW MORE</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profileCat">
+                        <img src="assets/images/top/emma.png" alt="こっちを見ている猫">
+                    </div>
+                </section>
+                <section class="section section--goods">
+                    <div class="goodsWrapper">
+                        <div class="goodsFlow">
+                            <div class="goodsFlow__text goodsFlow__text--top">
+                                <p>GOODS SALES GOODS SALES</p>
+                                <p>GOODS SALES GOODS SALES</p>
+                            </div>
+
+                            <div class="goodsFlow__text goodsFlow__text--bottom">
+                                <p>GOODS SALES GOODS SALES</p>
+                                <p>GOODS SALES GOODS SALES</p>
+                            </div>
+
+                            <div class="goodsFlow__imgWrap">
+                                <div class="goodsFlow__imgList">
+                                    <img src="assets/images/top/goods01.jpg" alt="グッズ1">
+                                    <img src="assets/images/top/goods02.jpg" alt="グッズ2">
+                                    <img src="assets/images/top/goods03.jpg" alt="グッズ3">
+                                    <img src="assets/images/top/goods04.jpg" alt="グッズ4">
+                                    <img src="assets/images/top/goods01.jpg" alt="グッズ1">
+                                    <img src="assets/images/top/goods02.jpg" alt="グッズ2">
+                                    <img src="assets/images/top/goods03.jpg" alt="グッズ3">
+                                    <img src="assets/images/top/goods04.jpg" alt="グッズ4">
+                                </div>
+                                <div class="goodsFlow__imgList"> <img src="assets/images/top/goods01.jpg" alt="グッズ1">
+                                    <img src="assets/images/top/goods02.jpg" alt="グッズ2">
+                                    <img src="assets/images/top/goods03.jpg" alt="グッズ3">
+                                    <img src="assets/images/top/goods04.jpg" alt="グッズ4">
+                                    <img src="assets/images/top/goods01.jpg" alt="グッズ1">
+                                    <img src="assets/images/top/goods02.jpg" alt="グッズ2">
+                                    <img src="assets/images/top/goods03.jpg" alt="グッズ3">
+                                    <img src="assets/images/top/goods04.jpg" alt="グッズ4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goodsContainer">
+                        <div class="goodsStickers">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="assets/images/top/sticker_pc.png">
+                                <img class="goodsStickers__img" src="assets/images/top/sticker_sp.png" alt="ステッカーイラスト">
+                            </picture>
+                        </div>
+                        <div class="goodsContainer__row">
+                            <p class="goodsText">
+                                ポップでチェック柄をモチーフにした、オリジナルイラスト作品やステッカー、グッズを販売しています。<br>ぜひ手に取って、SHUの世界観を感じていただけたら嬉しいです。
+                            </p>
+                            <div class="sectionBtn">
+                                <a class="btn-round btn-round--goods" href="https://dashuselect.base.shop/"
+                                    target="_blank">
+                                    VIEW SHOP
+                                    <img class="btn-icon" src="assets/images/top/arrow_white.svg" alt="白の矢印">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class="article__footer">
+                    <div class="footerContact">
+                        <div class="footerContact__head js-title">
+                            <img class="footerContact__cat" src="assets/images/top/contact_emma.png" alt="猫のイラスト">
+                        </div>
+                        <div class="articleContact__inner">
+                            <p class="footerContact__subTitle js-slow-wave">Let's talk about your projec<span class="ls-p3">t</span>!</p>
+                            <h2 class="footerContact__mainTitle">CONTACT</h2> 
+                            
+                            <div class="footerContact__bottomGroup">
+                                <p class="articleContact__text">
+                                    お仕事のご依頼、展示のお誘いなど、フォームから受け付けています。<br>
+                                    ぜひお気軽にお問い合わせください。
+                                </p>
+                                <div class="footerContact__btnArea">
+                                    <a href="https://form.run/@shuokada" class="btn-round btn-round--contact" target="_blank">
+                                        CONTACT
+                                        <img class="btn-icon" src="assets/images/top/arrow_green_sp.svg" alt="矢印">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footerPeople">
+                        <img src="assets/images/top/footer_people.png" alt="最後の晩餐イラスト">
+                    </div>
+                </footer>
+            </article>
+        </main>
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="footer__content">
+                    <nav class="footer__nav">
+                        <p class="footer__label">(MENU)</p>
+                        <ul class="footer__menuList">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="works.html">WORKS</a></li>
+                            <li><a href="profile.html">PROFILE</a></li>
+                            <li><a href="https://form.run/@shuokada" target="_blank" class="footer__contactLink">CONTACT</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__sns">
+                        <p class="footer__label"><span class="ls-p6">(</span>FOLLOW US)</p>
+                        <div class="sns">
+                            <a class="sns__link sns__link--footer" href="https://www.instagram.com/da____shu/"
+                                target="_blank">
+                                <img src="assets/images/top/Instagram_white.svg" alt="インスタグラムアイコン">
+                                <span>Instagram</span>
+                            </a>
+                            <a class="sns__link sns__link--footer" href="https://www.tiktok.com/@dashu0901/"
+                                target="_blank">
+                                <img src="assets/images/top/tiktok_white.svg" alt="TikTokのアイコン">
+                                <span>TikTok</span>
+                            </a>
+                        </div>
+                        <div class="footer__gotoTop">
+                            <a href="#container">
+                                <img src="assets/images/top/rocket.png" alt="ロケット">
+                                <span>GOTO TOP</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__logo">
+                    <p class="footer__logoName"><span>OKADA SHU</span></p>
+                </div>
+                <p class="copyright">©2026 SHU</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
