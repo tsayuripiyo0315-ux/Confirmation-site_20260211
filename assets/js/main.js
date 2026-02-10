@@ -37,10 +37,15 @@ $(function () {
             }
         };
 
-        $(window).on('load', function() {
+        const $loadingImg = $('.loading-img');
+        if ($loadingImg.length && $loadingImg[0].complete) {
             isWindowLoaded = true;
-            completeLoading();
-        });
+        } else {
+            $(window).on('load', function() {
+                isWindowLoaded = true;
+                completeLoading();
+            });
+        }
 
         setTimeout(() => {
             $loading.addClass('is-text-active');
@@ -57,13 +62,12 @@ $(function () {
             isTimeOver = true;
             completeLoading();
             
-            // 保険：5秒待っても画像が読み込めない場合は強制スタート
             setTimeout(() => {
                 if (!isWindowLoaded) {
                     isWindowLoaded = true;
                     completeLoading();
                 }
-            }, 1700); // 3300 + 1700 = 5000ms
+            }, 1700);
         }, 3300);
     };
 
