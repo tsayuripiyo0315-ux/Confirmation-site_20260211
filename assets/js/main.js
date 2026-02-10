@@ -108,8 +108,13 @@ $(function () {
     handleHeaderHideAtFooter();
 
     // --- FooterのTopへ戻る ---
+    let isFlying = false;
+
     $('.footer__gotoTop a').on('click', function (e) {
         e.preventDefault();
+
+        if (isFlying) return; 
+        isFlying = true; 
 
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -136,6 +141,7 @@ $(function () {
         setTimeout(() => { 
             $clone.addClass('is-flying-animation'); 
         }, startDelay);
+
         if (isSafari) {
             setTimeout(() => {
                 $('html, body').stop().animate({ scrollTop: 0 }, 1000, 'swing');
@@ -152,6 +158,7 @@ $(function () {
         setTimeout(() => { 
             $clone.remove(); 
             $img.css('visibility', 'visible'); 
+            isFlying = false; 
         }, cleanupTime);
     });
 
