@@ -41,11 +41,11 @@ $(function () {
             isWindowLoaded = true;
             setTimeout(() => {
                 $loading.addClass('is-dash');
-            }, 1200);
+            }, 2000);
             setTimeout(() => {
                 isTimeOver = true;
                 completeLoading();
-            }, 2500);
+            }, 3300);
         };
 
         const $loadingImg = $('.loading-img');
