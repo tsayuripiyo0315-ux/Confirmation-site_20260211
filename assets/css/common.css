@@ -1070,6 +1070,12 @@ sns
     display: block;
     margin-bottom: 0.6rem;
     animation: standbyShake 3s infinite; 
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .footer__gotoTop span {
