@@ -25,6 +25,23 @@ $(function () {
     const startLoading = () => {
         if ($body.hasClass('is-loaded')) return;
 
+        let isWindowLoaded = false;
+        let isTimeOver = false;
+
+        const completeLoading = () => {
+            if (isWindowLoaded && isTimeOver) {
+                $loading.addClass('is-loaded'); 
+                setTimeout(() => {
+                    startAnimation(); 
+                }, 800);
+            }
+        };
+
+        $(window).on('load', function() {
+            isWindowLoaded = true;
+            completeLoading();
+        });
+
         setTimeout(() => {
             $loading.addClass('is-text-active');
             $textSpans.each(function(i) {
@@ -37,11 +54,16 @@ $(function () {
         }, 2000); 
 
         setTimeout(() => {
-            $loading.addClass('is-loaded'); 
-
+            isTimeOver = true;
+            completeLoading();
+            
+            // 保険：5秒待っても画像が読み込めない場合は強制スタート
             setTimeout(() => {
-                startAnimation(); 
-            }, 800);
+                if (!isWindowLoaded) {
+                    isWindowLoaded = true;
+                    completeLoading();
+                }
+            }, 1700); // 3300 + 1700 = 5000ms
         }, 3300);
     };
 
