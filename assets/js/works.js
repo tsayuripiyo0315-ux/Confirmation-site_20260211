@@ -249,26 +249,57 @@ $(function () {
     });
     
     // --- FooterのTopへ戻る ---
+    let isFlying = false;
+
     $('.footer__gotoTop a').on('click', function (e) {
         e.preventDefault();
+
+        if (isFlying) return; 
+        isFlying = true; 
+
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
         const $parent = $('.footer__gotoTop');
         const $img = $parent.find('img');
         const rect = $img[0].getBoundingClientRect();
-        $img.css('opacity', '0');
+
         const $clone = $img.clone().appendTo('body');
         $clone.css({
-            'position': 'fixed', 'top': rect.top + 'px', 'left': rect.left + 'px',
-            'width': $img.width() + 'px', 'margin': '0', 'z-index': '10000',
-            'pointer-events': 'none', 'opacity': '1', 'animation': 'none'
+            'position': 'fixed', 
+            'top': rect.top + 'px', 
+            'left': rect.left + 'px',
+            'width': $img.width() + 'px', 
+            'margin': '0', 
+            'z-index': '10000',
+            'pointer-events': 'none', 
+            'opacity': '1', 
+            'animation': 'none'
         });
-        setTimeout(() => { $clone.addClass('is-flying-animation'); }, 10);
+
+        $img.css('visibility', 'hidden');
+
+        const startDelay = isFirefox ? 100 : 10;
+        setTimeout(() => { 
+            $clone.addClass('is-flying-animation'); 
+        }, startDelay);
+
         if (isSafari) {
-            setTimeout(() => { $('html, body').stop().animate({ scrollTop: 0 }, 1000, 'swing'); }, 600);
+            setTimeout(() => {
+                $('html, body').stop().animate({ scrollTop: 0 }, 1000, 'swing');
+            }, 600);
+        } else if (isFirefox) {
+            setTimeout(() => {
+                $('html, body').stop().animate({ scrollTop: 0 }, 800, 'swing');
+            }, 1000);
         } else {
             $('html, body').stop().animate({ scrollTop: 0 }, 800, 'swing');
         }
-        const cleanupTime = isSafari ? 2200 : 1600;
-        setTimeout(() => { $clone.remove(); $img.css('opacity', '1'); }, cleanupTime);
+
+        const cleanupTime = isFirefox ? 2500 : (isSafari ? 2200 : 3000);
+        setTimeout(() => { 
+            $clone.remove(); 
+            $img.css('visibility', 'visible'); 
+            isFlying = false; 
+        }, cleanupTime);
     });
 });
