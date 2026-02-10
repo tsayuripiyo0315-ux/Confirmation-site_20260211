@@ -36,39 +36,30 @@ $(function () {
                 }, 800);
             }
         };
+        const onImageReady = () => {
+            if (isWindowLoaded) return;
+            isWindowLoaded = true;
+            setTimeout(() => {
+                $loading.addClass('is-dash');
+            }, 2000);
+            setTimeout(() => {
+                isTimeOver = true;
+                completeLoading();
+            }, 3300);
+        };
 
         const $loadingImg = $('.loading-img');
         if ($loadingImg.length && $loadingImg[0].complete) {
-            isWindowLoaded = true;
+            onImageReady();
         } else {
-            $(window).on('load', function() {
-                isWindowLoaded = true;
-                completeLoading();
-            });
+            $(window).on('load', onImageReady);
         }
-
         setTimeout(() => {
             $loading.addClass('is-text-active');
             $textSpans.each(function(i) {
                 $(this).css('transition-delay', (i * 0.08) + 's');
             });
         }, 200);
-
-        setTimeout(() => {
-            $loading.addClass('is-dash');
-        }, 2000); 
-
-        setTimeout(() => {
-            isTimeOver = true;
-            completeLoading();
-            
-            setTimeout(() => {
-                if (!isWindowLoaded) {
-                    isWindowLoaded = true;
-                    completeLoading();
-                }
-            }, 1700);
-        }, 3300);
     };
 
     // --- 【FV出現】 ---
