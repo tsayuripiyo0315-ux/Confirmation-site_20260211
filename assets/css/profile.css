@@ -112,7 +112,7 @@ profileContent
 .profileContent::after {
     content: "";
     display: block;
-    margin: 10.0rem auto 0;
+    margin: 4rem auto 0;
     width: 100%;
     border-bottom: 1px solid var(--primary-grayR);
 }
@@ -166,7 +166,7 @@ profileContent
 
     .profileContent {
         position: relative;
-        padding: 18.5rem var(--contentPadding) 28.2rem;
+        padding: 18.5rem var(--contentPadding) 12rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -256,7 +256,7 @@ profileContent
 profile-features
 =================================*/
 .profile-features {
-    padding: 10.0rem var(--contentPadding) 0;
+    padding: 10rem var(--contentPadding) 0;
 }
 .feature-item {
     margin-top: 12rem;
@@ -327,13 +327,13 @@ profile-features
     font-weight: 400;
     letter-spacing: 0.07em;
 }
-.profile-features::after {
+/* .profile-features::after {
     content: "";
     display: block;
     margin: 10.0rem auto 0;
     width: 100%;
     border-bottom: 1px solid var(--primary-grayR);
-}
+} */
 
 @media screen and (min-width: 769px) {
     .profile-features {
@@ -385,16 +385,16 @@ profile-features
     .circle .left {
         width: 44.1rem;
     }
-    .profile-features::after {
+    /* .profile-features::after {
         margin: 20.0rem auto 0;
-    }
+    } */
 }
 
 /* ================================ 
 profile-tiktok
 =================================*/
 .profile-tiktok {
-    padding: 10.0rem var(--contentPadding) 0;
+    padding: 12rem var(--contentPadding) 0;
     overflow-x: clip;
 }
 
@@ -498,7 +498,7 @@ profile-tiktok
 
 @media screen and (min-width: 769px) {
     .profile-tiktok {
-        padding: 20.0rem var(--contentPadding) 0;
+        padding: 28rem var(--contentPadding) 0;
     }
 
     .profile-tiktok__header {
