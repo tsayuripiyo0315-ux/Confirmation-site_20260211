@@ -48,6 +48,12 @@ $(function () {
             }, 3300);
         };
 
+        setTimeout(() => {
+            if (!isWindowLoaded) {
+                onImageReady();
+            }
+        }, 8000);
+
         const $loadingImg = $('.loading-img');
         if ($loadingImg.length && $loadingImg[0].complete) {
             onImageReady();
