@@ -42,7 +42,9 @@ img, video { max-width: 100%; height: auto; }
 .ls-p2 { letter-spacing: 0.02em; }
 .ls-p3 { letter-spacing: 0.03em; }
 .ls-p4 { letter-spacing: 0.04em; }
+.ls-p5 { letter-spacing: 0.05em; }
 .ls-p6 { letter-spacing: 0.06em; }
+.ls-p7 { letter-spacing: 0.07em; }
 .ls-p9 { letter-spacing: 0.09em; }
 .ls-p12 { letter-spacing: 0.12em; }
 
