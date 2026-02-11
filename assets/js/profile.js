@@ -3,7 +3,7 @@
 $(function () {
     const $nav = $('.nav');
 
-    // 犬のジャンプ演出
+    // --- メニューの犬ジャンプ演出 ---
     function dogJump() {
         const $dog = $('.menuDog');
         $dog.removeClass('is-jumping');
@@ -12,17 +12,30 @@ $(function () {
         }, 10);
     }
 
-    // ヘッダーメニュー開閉
     $('.header__topic .header__menu').on('click', function () {
         $nav.addClass('is-active');
         $('body').css('overflow', 'hidden');
         dogJump();
     });
 
-    $('.nav .header__menu, .nav__item a').on('click', function () {
+    $('.nav .header__menu').on('click', function () {
         $nav.removeClass('is-active');
-        $('body').css('overflow', '');
+        $('body').removeClass('is-fixed');
         dogJump();
+    });
+
+    $('.nav__item a').on('click', function (e) {
+        const $link = $(this);
+        const href = $link.attr('href');
+
+        if (href && !href.startsWith('#') && !$link.parent().hasClass('nav__item--contact')) {
+            e.preventDefault();
+            const targetUrl = $link.prop('href');
+
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 600);
+        }
     });
 
     // フッターでヘッダーを隠す
@@ -235,4 +248,8 @@ $(function () {
     if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
     $(window).on('beforeunload', function() { window.scrollTo(0, 0); });
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    window.addEventListener('pageshow', function() {
+        $('.btn-round, .nav__item a, .footerContact__btnArea a').removeClass('is-active');
+    });
 });

@@ -627,7 +627,7 @@ nav
 
 @media screen and (max-width: 768px) {
     .menuDog.is-jumping {
-        animation: dogDropSP 0.8s ease-out forwards;
+        animation: dogDropSP 1.1s ease-out forwards;
     }
 }
 /* ================================ 
@@ -798,7 +798,7 @@ sns
     height: 43rem;
     background: url('../images/top/footer_bg_sp.png') no-repeat top center;
     background-size: 100% auto;
-    padding-top: 18.9vw;
+    padding-top: 19.9vw;
 }
 .articleContact__inner {
     padding: 0 6.0rem;

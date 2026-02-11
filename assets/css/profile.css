@@ -116,7 +116,9 @@ profileContent
     width: 100%;
     border-bottom: 1px solid var(--primary-grayR);
 }
-
+.js-wave-title:not(.is-animated) {
+    opacity: 0;
+}
 /* --- タイトル演出（ここから） --- */
 .sub-header__title.js-wave-title {
     overflow: hidden;
@@ -465,17 +467,15 @@ profile-tiktok
 .tiktok-link {
     display: block;
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent; /* タップ時の青い枠を消す */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* --- 💡 新しく追加：イラストの位置 --- */
 .video-illust {
     position: absolute;
-    /* 💡 画面右端から60px(6.0rem)はみ出す */
     right: -9.6rem; 
-    /* 💡 ビデオの下端から55px(5.5rem)上に配置して被せる */
     bottom: -12.4rem; 
-    width: 24.0rem; /* W240 */
+    width: 24.0rem;
     transform: rotate(12deg);
     z-index: -1;
 }

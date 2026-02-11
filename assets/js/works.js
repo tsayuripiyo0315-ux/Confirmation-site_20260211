@@ -77,6 +77,7 @@ $(function () {
         
         // アニメーション用クラス付与
         setTimeout(() => { 
+            $('.article__footer, .footer').addClass('is-ready');
             document.querySelectorAll('.works__item').forEach((item, i) => { 
                 setTimeout(() => item.classList.add('is-visible'), i * 50); 
             }); 
@@ -100,9 +101,40 @@ $(function () {
         }
     }
 
-    // --- 4. イベントリスナー ---
-    $('.header__topic .header__menu').on('click', function () { $nav.addClass('is-active'); $('body').css('overflow', 'hidden'); dogJump(); });
-    $('.nav .header__menu, .nav__item a').on('click', function () { $nav.removeClass('is-active'); $('body').css('overflow', ''); dogJump(); });
+    // --- メニューの犬ジャンプ演出 ---
+    function dogJump() {
+        const $dog = $('.menuDog');
+        $dog.removeClass('is-jumping');
+        setTimeout(() => {
+            $dog.addClass('is-jumping');
+        }, 10);
+    }
+
+    $('.header__topic .header__menu').on('click', function () {
+        $nav.addClass('is-active');
+        $('body').css('overflow', 'hidden');
+        dogJump();
+    });
+
+    $('.nav .header__menu').on('click', function () {
+        $nav.removeClass('is-active');
+        $('body').removeClass('is-fixed');
+        dogJump();
+    });
+
+    $('.nav__item a').on('click', function (e) {
+        const $link = $(this);
+        const href = $link.attr('href');
+
+        if (href && !href.startsWith('#') && !$link.parent().hasClass('nav__item--contact')) {
+            e.preventDefault();
+            const targetUrl = $link.prop('href');
+
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 600);
+        }
+    });
 
     $(document).on('click', '.works__item', function() {
         currentIndex = $(this).data('index');
@@ -301,5 +333,8 @@ $(function () {
             $img.css('visibility', 'visible'); 
             isFlying = false; 
         }, cleanupTime);
+    });
+    window.addEventListener('pageshow', function() {
+        $('.btn-round, .nav__item a, .footerContact__btnArea a').removeClass('is-active');
     });
 });

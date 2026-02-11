@@ -97,14 +97,49 @@ $(function () {
 
     $('.header__topic .header__menu').on('click', function () {
         $nav.addClass('is-active');
-        $('body').addClass('is-fixed');
+        $('body').css('overflow', 'hidden');
         dogJump();
     });
 
-    $('.nav .header__menu, .nav__item a').on('click', function () {
+    $('.nav .header__menu').on('click', function () {
         $nav.removeClass('is-active');
         $('body').removeClass('is-fixed');
         dogJump();
+    });
+
+    $('.nav__item a, .btn-round, .footerContact__btnArea a').on('click', function (e) {
+        const $link = $(this);
+        const href = $link.attr('href');
+        const isMobile = window.innerWidth <= 768;
+
+        const target = $link.attr('target');
+        if (target === '_blank') {
+            return; // 以降の処理（e.preventDefaultなど）をせずに終了する
+        }
+
+        if (href && !href.startsWith('#')) {
+            if (isMobile) {
+                e.preventDefault();
+                const targetUrl = $link.prop('href');
+
+                $link.addClass('is-active');
+
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400);
+            } 
+            else {
+                if ($link.parent().hasClass('nav__item--home') || 
+                    $link.parent().hasClass('nav__item--works') || 
+                    $link.parent().hasClass('nav__item--profile')) {
+                    
+                    e.preventDefault();
+                    setTimeout(() => {
+                        window.location.href = $link.prop('href');
+                    }, 600);
+                }
+            }
+        }
     });
 
     // --- フッターでヘッダーを隠す処理 ---
@@ -380,4 +415,8 @@ $(function () {
         });
         logoObserver.observe(footerLogo);
     }
+
+    window.addEventListener('pageshow', function() {
+        $('.btn-round, .nav__contactLink').removeClass('is-active is-jumping'); 
+    });
 });
