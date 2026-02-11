@@ -662,11 +662,11 @@ btn
     display: block;
     transition: all 0.4s ease;
 }
-.btn-round:hover {
+.btn-round:not(.btn-round--goods):not(.btn-round--contact):hover {
     background-color: var(--primary-green, #194656);
     color: var(--primary-white); 
 }
-.btn-round:hover::after {
+.btn-round:not(.btn-round--goods):not(.btn-round--contact):hover::after {
     background-color: var(--primary-white);
     width: 14px;
     height: 14px;
@@ -678,7 +678,6 @@ btn
 .btn-round:hover .btn-text {
     transform: rotateX(360deg);
 }
-/* 違うデザインのボタン */
 .btn-round--goods {
     background-color: var(--primary-green);
     padding: 23px 44px 22px;
@@ -688,9 +687,6 @@ btn
 }
 .btn-round--goods::after {
     display: none;
-}
-.btn-round--goods:hover {
-    transform: scale(1.08);
 }
 .btn-round--contact {
     background-color: var(--primary-pink);
@@ -703,28 +699,34 @@ btn
 .btn-round--contact::after {
     display: none;
 }
-.btn-round--contact:hover {
-    background-color: var(--primary-pink);
-    color: var(--primary-green);
-    transform: scale(1.08);
-}
 .btn-icon {
     width: 11px;
     height: auto;
     transition: transform 0.3s ease;
 }
-
 @keyframes arrowMove {
     0% { transform: translate(0, 0); }
     50% { transform: translate(4px, -4px); }
     100% { transform: translate(0, 0); }
 }
-
-.btn-round:hover .btn-icon {
+@media screen and (min-width: 769px) {
+    .btn-round--goods:hover {
+        transform: scale(1.08);
+    }
+    .btn-round--contact:hover {
+        background-color: var(--primary-pink);
+        color: var(--primary-green);
+        transform: scale(1.08);
+    }
+    .btn-round:hover .btn-icon {
+        animation: arrowMove 0.6s infinite ease-in-out;
+        width: 14px;
+    }
+}
+.btn-round:not(.btn-round--goods):not(.btn-round--contact):hover .btn-icon {
     animation: arrowMove 0.6s infinite ease-in-out;
     width: 14px;
 }
-/* common PC */
 @media screen and (min-width: 769px) {
     .btn-round {
         height: 6.9rem;

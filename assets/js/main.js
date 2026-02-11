@@ -114,7 +114,7 @@ $(function () {
 
         const target = $link.attr('target');
         if (target === '_blank') {
-            return; // 以降の処理（e.preventDefaultなど）をせずに終了する
+            return;
         }
 
         if (href && !href.startsWith('#')) {
