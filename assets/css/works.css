@@ -371,18 +371,18 @@ Modal
 
 /* フッターナビゲーション */
 .modal__footer {
-  margin-top: 8.4rem;
+  margin-top: 6.4rem;
 }
 
 .modal__nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5.9rem;
+  margin-bottom: 4.4rem;
 }
 
 .modal__arrowBtn {
   cursor: pointer;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   letter-spacing: -0.01em;
   color: var(--primary-green);
   display: flex;
@@ -399,7 +399,7 @@ Modal
   display: block;
   margin: 0 auto;
   cursor: pointer;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: var(--primary-gray);
   letter-spacing: -0.01em;
 }
