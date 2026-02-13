@@ -42,7 +42,7 @@ $(function () {
 
     // データ登録
     worksData.push({ category: ['digital'], tag: 'CLIENT WORK', title: '私立図書館 祝日様', subTitle: 'RISING SUN ROCK FESTIVAL in EZO 2025', img: 'digital_client_01', subImages: ['digital_client_sub02'] });
-    const dOrderTitles = ['Karin様', 'いずみ様', 'ゆな様'];
+    const dOrderTitles = ['Commission レト口映画ポスター風', 'Commission', 'Commission'];
     dOrderTitles.forEach((t, i) => worksData.push({ category: ['digital', 'order'], tag: 'ORDER', title: t, subTitle: '', img: `digital_order_0${i+1}`, subImages: [] }));
     const dOriTitles = ['Just Bought Socks', 'Birthday', 'Chicken', 'GO VOTE', 'Left behind on the moon', 'グランド・ブダペスト・ホテル', 'Home Alone. Merry Christmas! ', 'もう一年経っちゃった', '犬だってお洒落したい', 'Chickens', 'プレゼントが消えた', 'TOY BOX', 'The 25th Birthday Cake', 'キャトルミューティレーション', "Nobody's Purrfect, Emma", '"Inspired by Wes Anderson posters"', '遅刻、遅刻！', 'Napoleon Dynamite', '視線の先に', 'BONSAI', "What's your story?", 'Call Me by Your Name', 'どこ行こう、、', 'Find', '針を落として', 'Have you seen Emma?', 'Girl with a Pearl Earring'];
     for (let i = 1; i <= 27; i++) { worksData.push({ category: ['digital', 'original'], tag: 'ORIGINAL', title: dOriTitles[i-1] || `ORIGINAL WORK ${i}`, subTitle: '', img: `digital_original_${i.toString().padStart(2, '0')}`, subImages: [] }); }
