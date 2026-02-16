@@ -800,7 +800,7 @@ sns
     margin-top: 21.9rem;
     width: 100%;
     height: 43rem;
-    background: url('../images/top/footer_bg_sp.png') no-repeat top center;
+    background: url('../images/top/footer_bg_sp.webp') no-repeat top center;
     background-size: 100% auto;
     padding-top: 19.9vw;
 }
@@ -890,7 +890,7 @@ sns
     .footerContact {
         margin-top: 45.4rem;
         height: 93.2rem;
-        background: url('../images/top/footer_bg_pc.png') no-repeat top center;
+        background: url('../images/top/footer_bg_pc.webp') no-repeat top center;
         background-size: 100% auto;
         padding-top: 23.8rem;
     }
