@@ -1080,6 +1080,13 @@ sns
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform: translateZ(0);
+    will-change: transform, visibility;
+}
+.is-flying-animation {
+    animation: rocketFly 2.0s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards !important;
+    will-change: transform, opacity;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .footer__gotoTop span {
@@ -1216,9 +1223,4 @@ sns
         transform: translate(0, -2000px);
         opacity: 1; 
     }
-}
-
-.is-flying-animation {
-    animation: rocketFly 2.0s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards !important;
-    will-change: transform, opacity;
 }
