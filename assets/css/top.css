@@ -104,7 +104,7 @@ article__header
   }
 
   .article__title {
-    font-size: clamp(100px, 28.2rem, 350px);
+    font-size: clamp(100px, 28.2rem, 450px);
     line-height: 0.87;
     position: relative;
     z-index: 2;

@@ -677,7 +677,7 @@ btn
     display: inline-block;
     transition: transform 0.2s ease-out;
 }
-.btn-round:hover .btn-text {
+.btn-round:not(.btn-round--goods):not(.btn-round--contact):hover .btn-text {
     transform: rotateX(360deg);
 }
 .btn-round--goods {
