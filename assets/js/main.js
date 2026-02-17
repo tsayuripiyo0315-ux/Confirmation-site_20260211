@@ -235,6 +235,37 @@ $(function () {
         }, cleanupTime);
     });
 
+    // --- 1. セクションタイトル（一文字ずつ分解してニョキッ） ---
+    $('.js-wave-title').each(function() {
+        const $title = $(this);
+        const html = $title.html();
+        const wrappedText = html.replace(/(<span[^>]*>.*?<\/span>)|([^<]+)/g, (match, g1, g2) => {
+            if (g1) return g1;
+            return g2.split('').map(char => `<span>${char === ' ' ? '&nbsp;' : char}</span>`).join('');
+        });
+        
+        $title.html(wrappedText);
+        $title.find('span').each(function(index) {
+            $(this).css({
+                'display': 'inline-block',
+                'transition-delay': (index * 0.05) + 's'
+            });
+        });
+    });
+
+    const titleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('is-active');
+                titleObserver.unobserve(entry.target);
+            }
+        });
+    }, scrollOptions);
+
+    $('.sectionTitle').each(function() {
+        titleObserver.observe(this);
+    });
+
     // --- 2. WORKSの画像リスト ---
     const itemObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
