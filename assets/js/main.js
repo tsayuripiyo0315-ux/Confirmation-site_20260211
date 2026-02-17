@@ -52,7 +52,7 @@ $(function () {
             if (!isWindowLoaded) {
                 onImageReady();
             }
-        }, 5000);
+        }, 2000);
 
         const $loadingImg = $('.loading-img');
         if ($loadingImg.length && $loadingImg[0].complete) {
